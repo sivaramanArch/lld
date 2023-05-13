@@ -1,16 +1,12 @@
-package com.test.parking.domain;
+package com.test.parking.domain.parkinglot;
 
-import com.test.parking.actors.PaymentService;
-import com.test.parking.actors.PrinterUtil;
-import com.test.parking.domain.enums.ParkingSlotType;
+import com.test.parking.utils.PaymentService;
+import com.test.parking.utils.PrinterUtil;
 import lombok.Builder;
 import lombok.Data;
-import lombok.SneakyThrows;
 import org.apache.commons.lang3.RandomStringUtils;
 
 import java.time.LocalDateTime;
-import java.util.List;
-import java.util.Map;
 
 @Builder
 @Data
@@ -27,7 +23,7 @@ public class ExitGate {
 
         // lock the parking slot - as we await payment
         // set end time as vehicle reached ending gate
-        ticket.parkingSlot.setIsOperational(false);
+        ticket.getParkingSlot().setIsOperational(false);
         ticket.setEndTime(LocalDateTime.now());
 
 
@@ -50,6 +46,6 @@ public class ExitGate {
         ticket.getParkingSlot().setIsOperational(true);
 
         // return receipt
-        return ParkingReceipt.builder().amount(ticket.amount).build();
+        return ParkingReceipt.builder().amount(ticket.getAmount()).build();
     }
 }

@@ -1,6 +1,5 @@
-package com.test.parking.actors;
+package com.test.parking.utils;
 
-import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 public class PrinterUtil {
@@ -74,21 +73,4 @@ public class PrinterUtil {
         return String.format("%-" + n + "s", str);
     }
 
-    public static void displayGrid(int[][] grid, List<String> rowNames, List<String> colNames) {
-        // Print column names
-        System.out.print("  ");
-        for (String colName : colNames) {
-            System.out.print(colName + " ");
-        }
-        System.out.println();
-
-        // Print grid contents with row names
-        for (int i = 0; i < grid.length; i++) {
-            System.out.print(rowNames.get(i) + " ");
-            for (int j = 0; j < grid[i].length; j++) {
-                System.out.print(grid[i][j] + " ");
-            }
-            System.out.println();
-        }
-    }
 }

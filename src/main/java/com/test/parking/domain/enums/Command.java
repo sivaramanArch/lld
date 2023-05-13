@@ -1,4 +1,4 @@
-package com.test.parking.domain;
+package com.test.parking.domain.enums;
 
 public enum Command {
     CREATE_PARKING_LOT,

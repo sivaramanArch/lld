@@ -1,4 +1,4 @@
-package com.test.parking.domain;
+package com.test.parking.domain.vehicle;
 
 import com.test.parking.domain.enums.VehicleType;
 import lombok.AllArgsConstructor;

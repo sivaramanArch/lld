@@ -1,7 +1,7 @@
-package com.test.parking.actors;
+package com.test.parking.utils;
 
-import com.test.parking.domain.ParkingSlot;
-import com.test.parking.domain.ParkingSystem;
+import com.test.parking.domain.parkinglot.ParkingSlot;
+import com.test.parking.domain.parkinglot.ParkingSystem;
 import lombok.Data;
 import lombok.RequiredArgsConstructor;
 

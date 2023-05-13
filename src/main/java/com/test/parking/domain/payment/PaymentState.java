@@ -1,4 +1,4 @@
-package com.test.parking.domain;
+package com.test.parking.domain.payment;
 
 public  enum PaymentState {
     INITIATED,

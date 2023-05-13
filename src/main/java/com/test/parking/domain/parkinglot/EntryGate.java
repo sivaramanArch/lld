@@ -1,7 +1,8 @@
-package com.test.parking.domain;
+package com.test.parking.domain.parkinglot;
 
 import com.test.parking.domain.enums.ParkingSlotType;
 import com.test.parking.domain.enums.VehicleType;
+import com.test.parking.domain.vehicle.Vehicle;
 import lombok.Builder;
 import lombok.Data;
 import org.apache.commons.lang3.RandomStringUtils;

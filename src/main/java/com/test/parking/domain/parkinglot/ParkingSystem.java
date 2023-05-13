@@ -1,7 +1,8 @@
-package com.test.parking.domain;
+package com.test.parking.domain.parkinglot;
 
-import com.test.parking.actors.DisplayHelper;
+import com.test.parking.utils.DisplayHelper;
 import com.test.parking.domain.enums.ParkingSlotType;
+import com.test.parking.domain.vehicle.Vehicle;
 import lombok.Builder;
 import lombok.Data;
 import lombok.ToString;

@@ -1,7 +1,15 @@
-package com.test.parking.actors;
+package com.test.parking;
 
-import com.test.parking.domain.*;
+import com.test.parking.domain.enums.Command;
 import com.test.parking.domain.enums.VehicleType;
+import com.test.parking.domain.parkinglot.EntryGate;
+import com.test.parking.domain.parkinglot.ParkingSystem;
+import com.test.parking.domain.parkinglot.ParkingTicket;
+import com.test.parking.domain.vehicle.Vehicle;
+import com.test.parking.utils.DisplayHelper;
+import com.test.parking.utils.InputValidator;
+import com.test.parking.utils.PojoHelper;
+import com.test.parking.utils.PrinterUtil;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -12,28 +20,19 @@ import java.util.Scanner;
 /**
  * Driver class for parking lots
  */
-public class ParkingLotSimulator {
+public class Driver {
 
     private static ParkingSystem ps;
-    private static final Map<String,ParkingTicket> ticketVehicleMap = new HashMap<>();
+    private static final Map<String, ParkingTicket> ticketVehicleMap = new HashMap<>();
 
-    private static ParkingSystem getParkingSystem(int size, int entryGateCount, int exitGateCount) {
-        var slotMap = PojoHelper.getParkingSlotMap(PojoHelper.getSlots(size));
-        var entryGateMap = PojoHelper.getEntryGateMap(entryGateCount);
-        var exitGateMap = PojoHelper.getExitGateMap(exitGateCount);
-
-        return ParkingSystem.builder()
-                .entryGateMap(entryGateMap)
-                .exitGateMap(exitGateMap)
-                .parkingSlotListMap(slotMap)
-                .displayHelper(new DisplayHelper())
-                .build();
+    public static void main(String[] args) {
+        readCommandAndExecute();
     }
 
     private static void readCommandAndExecute() {
         String fileName = "command.txt";
 
-        try (InputStream stream = ParkingLotSimulator.class.getClassLoader().getResourceAsStream(fileName)) {
+        try (InputStream stream = Driver.class.getClassLoader().getResourceAsStream(fileName)) {
             Scanner scanner = new Scanner(stream);
             while (scanner.hasNextLine()) {
                 String inputLine = scanner.nextLine();
@@ -94,9 +93,17 @@ public class ParkingLotSimulator {
         }
     }
 
-    public static void main(String[] args) {
-        readCommandAndExecute();
-    }
+    private static ParkingSystem getParkingSystem(int size, int entryGateCount, int exitGateCount) {
+        var slotMap = PojoHelper.getParkingSlotMap(PojoHelper.getSlots(size));
+        var entryGateMap = PojoHelper.getEntryGateMap(entryGateCount);
+        var exitGateMap = PojoHelper.getExitGateMap(exitGateCount);
 
+        return ParkingSystem.builder()
+                .entryGateMap(entryGateMap)
+                .exitGateMap(exitGateMap)
+                .parkingSlotListMap(slotMap)
+                .displayHelper(new DisplayHelper())
+                .build();
+    }
 
 }

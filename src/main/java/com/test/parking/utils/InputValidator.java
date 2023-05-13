@@ -1,6 +1,6 @@
-package com.test.parking.actors;
+package com.test.parking.utils;
 
-import com.test.parking.domain.Command;
+import com.test.parking.domain.enums.Command;
 
 import java.util.Arrays;
 

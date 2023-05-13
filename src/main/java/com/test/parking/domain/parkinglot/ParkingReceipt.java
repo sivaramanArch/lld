@@ -1,4 +1,4 @@
-package com.test.parking.domain;
+package com.test.parking.domain.parkinglot;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;

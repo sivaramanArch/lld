@@ -1,8 +1,8 @@
-package com.test.parking.actors;
+package com.test.parking.utils;
 
-import com.test.parking.domain.ParkingTicket;
-import com.test.parking.domain.Payment;
-import com.test.parking.domain.PaymentState;
+import com.test.parking.domain.parkinglot.ParkingTicket;
+import com.test.parking.domain.payment.Payment;
+import com.test.parking.domain.payment.PaymentState;
 
 import java.util.UUID;
 

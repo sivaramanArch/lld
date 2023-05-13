@@ -1,9 +1,9 @@
-package com.test.parking.actors;
+package com.test.parking.utils;
 
-import com.test.parking.domain.EntryGate;
-import com.test.parking.domain.ExitGate;
-import com.test.parking.domain.ParkingSlot;
-import com.test.parking.domain.Vehicle;
+import com.test.parking.domain.parkinglot.EntryGate;
+import com.test.parking.domain.parkinglot.ExitGate;
+import com.test.parking.domain.parkinglot.ParkingSlot;
+import com.test.parking.domain.vehicle.Vehicle;
 import com.test.parking.domain.enums.ParkingSlotType;
 import com.test.parking.domain.enums.VehicleType;
 import lombok.Getter;
@@ -41,7 +41,7 @@ public class PojoHelper {
 
     }
 
-    static Map<ParkingSlotType, List<ParkingSlot>> getParkingSlotMap(List<ParkingSlot> slots) {
+    public static Map<ParkingSlotType, List<ParkingSlot>> getParkingSlotMap(List<ParkingSlot> slots) {
         return slots.stream().collect(Collectors.groupingBy(ParkingSlot::getSlotType));
     }
 

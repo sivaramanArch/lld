@@ -1,5 +1,6 @@
-package com.test.parking.domain;
+package com.test.parking.domain.parkinglot;
 
+import com.test.parking.domain.parkinglot.ParkingSlot;
 import lombok.*;
 import org.apache.commons.lang3.RandomStringUtils;
 

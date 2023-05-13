@@ -1,6 +1,6 @@
-package com.test.parking.domain;
+package com.test.parking.domain.payment;
 
-import com.test.parking.actors.PrinterUtil;
+import com.test.parking.utils.PrinterUtil;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -8,7 +8,6 @@ import java.time.LocalDateTime;
 import java.time.ZoneId;
 import java.util.Random;
 import java.util.UUID;
-import java.util.concurrent.ThreadLocalRandom;
 
 @Getter
 public class Payment {
