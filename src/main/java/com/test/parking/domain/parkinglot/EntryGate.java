@@ -26,7 +26,7 @@ public class EntryGate {
             throw new RuntimeException("PARKING SLOT IS FULL , CHECK DISPLAY");
         }
 
-        // get type of vehicle
+        // get assigned slot for vehicle
         ParkingSlot parkingSlot = getAssignedSlot(vehicle, parkingSlotListMap);
 
         // create ticket
